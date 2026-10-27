@@ -26,7 +26,11 @@ jobs:
           node --check lib/index.js
           node --check lib/core.js
           node --check lib/reapply.js
+          node --check client.js
           node --input-type=module -e "import './lib/index.js'"
+
+      - name: Run tests
+        run: npm test
 
       - name: Publish GitHub Release
         env:
